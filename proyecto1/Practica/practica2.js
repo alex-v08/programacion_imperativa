@@ -21,3 +21,4 @@ return contador;
 }
 
 console.log(noParesDeContarImparesHasta(5));
+

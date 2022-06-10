@@ -71,106 +71,236 @@ Crear el objeto “alumno”, el cual va a consistir de las siguientes propiedad
 Nos gustaría calcular el promedio del alumno y si el mismo está aprobado, basado en una
 nota de aprobación que le va a ser dada. Para este ejercicio, vamos a dejar que pienses
 todos los métodos y propiedades que puedan hacer falta para que el programa funcione
-correctamente de la manera solicitada.*/
+// correctamente de la manera solicitada.*/
 
-//la lista de clientes.
-let arrayCuentas = [
-    {
-      nroCuenta: 5486273622,
-      tipoDeCuenta: "Cuenta Corriente",
-      saldoEnPesos: 27771,
-      titularCuenta: "Abigael Natte",
-    },
-    {
-      nroCuenta: 1183971869,
-      tipoDeCuenta: "Caja de Ahorro",
-      saldoEnPesos: 8675,
-      titularCuenta: "Ramon Connell",
-    },
-    {
-      nroCuenta: 9582019689,
-      tipoDeCuenta: "Caja de Ahorro",
-      saldoEnPesos: 27363,
-      titularCuenta: "Jarret Lafuente",
-    },
-    {
-      nroCuenta: 1761924656,
-      tipoDeCuenta: "Cuenta Corriente",
-      saldoEnPesos: 32415,
-      titularCuenta: "Ansel Ardley",
-    },
-    {
-      nroCuenta: 7401971607,
-      tipoDeCuenta: "Cuenta Unica",
-      saldoEnPesos: 18789,
-      titularCuenta: "Jacki Shurmer",
-    },
-  ];
-  // podes continuar tu codigo a partir de aca!
-  let banco = {
-    clientes: arrayCuentas,
-    consultarCliente: function(nombre) {
-        let clienteEncontrado = this.clientes.find(cliente => cliente.titularCuenta === nombre);
-        return clienteEncontrado;
+// //la lista de clientes.
+// let arrayCuentas = [
+//     {
+//       nroCuenta: 5486273622,
+//       tipoDeCuenta: "Cuenta Corriente",
+//       saldoEnPesos: 27771,
+//       titularCuenta: "Abigael Natte",
+//     },
+//     {
+//       nroCuenta: 1183971869,
+//       tipoDeCuenta: "Caja de Ahorro",
+//       saldoEnPesos: 8675,
+//       titularCuenta: "Ramon Connell",
+//     },
+//     {
+//       nroCuenta: 9582019689,
+//       tipoDeCuenta: "Caja de Ahorro",
+//       saldoEnPesos: 27363,
+//       titularCuenta: "Jarret Lafuente",
+//     },
+//     {
+//       nroCuenta: 1761924656,
+//       tipoDeCuenta: "Cuenta Corriente",
+//       saldoEnPesos: 32415,
+//       titularCuenta: "Ansel Ardley",
+//     },
+//     {
+//       nroCuenta: 7401971607,
+//       tipoDeCuenta: "Cuenta Unica",
+//       saldoEnPesos: 18789,
+//       titularCuenta: "Jacki Shurmer",
+//     },
+//   ];
+//   // podes continuar tu codigo a partir de aca!
+//   let banco = {
+//     clientes: arrayCuentas,
+//     consultarCliente: function(nombre) {
+//         let clienteEncontrado = this.clientes.find(cliente => cliente.titularCuenta === nombre);
+//         return clienteEncontrado;
         
-        },
-    depositar: function(titular, cantidad) {
-        let clienteEncontrado = this.consultarCliente(titular);
-        clienteEncontrado.saldoEnPesos += cantidad;
-        console.log(`Deposito realizado, su nuevo saldo es: ${clienteEncontrado.saldoEnPesos}`);
-        },
-    extraer: function(titular, cantidad) {
-        let clienteEncontrado = this.consultarCliente(titular);
-        if (clienteEncontrado.saldoEnPesos - cantidad < 0) {
-            console.log("Fondos insuficientes");
-        } else {
-            clienteEncontrado.saldoEnPesos -= cantidad;
-            console.log(`Extracción realizada correctamente, su nuevo saldo es: ${clienteEncontrado.saldoEnPesos}`);
-        };
-        }
-    }
+//         },
+//     depositar: function(titular, cantidad) {
+//         let clienteEncontrado = this.consultarCliente(titular);
+//         clienteEncontrado.saldoEnPesos += cantidad;
+//         console.log(`Deposito realizado, su nuevo saldo es: ${clienteEncontrado.saldoEnPesos}`);
+//         },
+//     extraer: function(titular, cantidad) {
+//         let clienteEncontrado = this.consultarCliente(titular);
+//         if (clienteEncontrado.saldoEnPesos - cantidad < 0) {
+//             console.log("Fondos insuficientes");
+//         } else {
+//             clienteEncontrado.saldoEnPesos -= cantidad;
+//             console.log(`Extracción realizada correctamente, su nuevo saldo es: ${clienteEncontrado.saldoEnPesos}`);
+//         };
+//         }
+//     }
 
-    console.log(banco.consultarCliente("Abigael Natte"));
-    banco.depositar("Ramon Connell", 1000);
-    banco.extraer("Ramon Connell", 100500);
+//     console.log(banco.consultarCliente("Abigael Natte"));
+//     banco.depositar("Ramon Connell", 1000);
+//     banco.extraer("Ramon Connell", 100500);
 
-    let propiedadUnica = function(array, propiedad) {
-        let arrayNuevo = [];
-        for (let i = 0; i < array.length; i++) {
-            arrayNuevo.push(array[i][propiedad]);
-        }
-        return arrayNuevo;
-    }
-
-
-let array = [ { nombre: "Lean", edad: 27 }, { nombre: "Eze", edad: 49} ]
-console.log(propiedadUnica(array, "edad") )//debe retornar [ { edad: 27 }, { edad: 49 } ]
-console.log (propiedadUnica(array, "nombre") )//debe retornar [ { nombre: “Lean”}, { nombre: “Eze” } ]
+//     let propiedadUnica = function(array, propiedad) {
+//         let arrayNuevo = [];
+//         for (let i = 0; i < array.length; i++) {
+//             arrayNuevo.push(array[i][propiedad]);
+//         }
+//         return arrayNuevo;
+//     }
 
 
-let alumno = {
+// let array = [ { nombre: "Lean", edad: 27 }, { nombre: "Eze", edad: 49} ]
+// console.log(propiedadUnica(array, "edad") )//debe retornar [ { edad: 27 }, { edad: 49 } ]
+// console.log (propiedadUnica(array, "nombre") )//debe retornar [ { nombre: “Lean”}, { nombre: “Eze” } ]
 
-    nombre: "Abigael Natte",
-    nroLegajo: 5486273622,
-    notas: [10, 9, 8, 7, 6],
-    promedio: function() {
-        let suma = 0;
-        for (let i = 0; i < this.notas.length; i++) {
-            suma += this.notas[i];
-        }
-        return suma / this.notas.length;
-    }
-    ,
-    aprobado: function() {
-        if (this.promedio() >= 7) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}   
-console.log(alumno.promedio());
-console.log(alumno.aprobado());
 
+// let alumno = {
+
+//     nombre: "Roberto to to to to ",
+//     nroLegajo: 5189387,
+//     notas: [10, 9, 8, 7, 6],
+//     promedio: function() {
+//         let suma = 0;
+//         for (let i = 0; i < this.notas.length; i++) {
+//             suma += this.notas[i];
+//         }
+//         return suma / this.notas.length;
+//     }
+//     ,
+//     aprobado: function() {
+//       return this.promedio() >= 7;
+//     }
+// }   
+// console.log(alumno.promedio());
+// console.log(alumno.aprobado());
+
+
+// //usando el objeto alumno1, crear una funcion que reciba un nombre y una nota y que
+// //agregue la nota al array de notas.
+
+// let alumno1 = alumno;
+
+// alumno1.nombre = "Andres";
+// alumno1.notas.push(10, 9, 5, 6, 9);
+
+
+// console.log(alumno1.nombre);
+// console.log(alumno1.notas);
+// console.log (alumno1.promedio())
+
+// let Camada1 = [];
+
+
+// // funcion de carga de nuevos alumnos
+// let  nuevoAlumnos = function (nombre, notas) {
 
     
+
+//     Camada1 = 
+
+
+
+// /*    En este ejercicio nuestra tarea es completar la función noParesDeContarImparesHasta. Esta función recibe un número X por parámetro y cuenta la cantidad de números impares que hay desde el número 0 hasta el número X (inclusive) y luego retorna ese valor. Para resolver la ejercitación debemos utilizar el for .*/
+
+// function noParesDeContarImparesHasta(numero) {
+//     let contador = 0;
+//     for (let i = 0; i <= numero; i++) {
+//         if (i % 2 != 0) {
+//             contador++;
+//         }
+//     }
+//     return contador;
+// }
+
+// let estudiantes = [
+//     {
+//       nombre: 'Alvaro',
+//       promedio : 9,
+//       curso : 'Android',
+//     },
+//     {
+//       nombre: 'Daniel',
+//       promedio : 6,
+//       curso : 'Full Stack',
+//     },
+//     {
+//       nombre: 'Alexis',
+//       promedio : 3,
+//       curso : 'iOS',
+//     }
+//   ]
+  
+//   let estudiantesNuevos = [
+  
+//     {nombre: "Mariana",
+  
+//   promedio: 9,
+  
+//   curso: "Full Stack"},
+//    {nombre: "Francisco",
+  
+//   promedio: 2,
+  
+//   curso: "Android"}
+//   ]
+
+
+//   //agregar elemetnos de estudiantesNuevos a estudiantes usando unshift
+
+//     estudiantes.unshift(estudiantesNuevos.forEach(Elemento => {estudiantesNuevos[Elemento]}));
+//     console.log(estudiantes);
+
+
+
+
+
+/*Ejercicio 5: unshift()
+Se reintegraron alumnos.
+
+    Tenemos la tarea de reintegrar a dos estudiantes que se habían registrado al principio de todo, se dieron de baja, ¡pero volvieron! Y para que no pierdan su lugar privilegiado queremos, utilizando un método de array, agregar al inicio del mismo a cada estudiante (de a uno a la vez).
+
+    Los datos que hay que agregar de cada uno son:
+
+    nombre: "Mariana",
+
+    promedio: 9,
+
+    curso: "Full Stack"
+
+    -------------------------
+
+    nombre: "Francisco",
+
+    promedio: 2,
+
+    curso: "Android"*/
+
+    let estudiantes = [
+        {
+           nombre: 'Alvaro',
+           promedio : 9,
+           curso : 'Android',
+         },
+          {
+            nombre: 'Daniel',
+            promedio : 6,
+            curso : 'Full Stack',
+          },
+          {
+            nombre: 'Alexis',
+            promedio : 3,
+            curso : 'iOS',
+          },
+        ]
+        let estudiantesNuevos = [
+            {nombre: "Mariana",
+                promedio: 9,    
+                curso: "Full Stack"},
+            {nombre: "Francisco",
+                promedio: 2,
+                curso: "Android"}   
+        ]           
+        estudiantes.unshift( 
+            {nombre: "Mariana",
+                promedio: 9,    
+                curso: "Full Stack"},
+            {nombre: "Francisco",
+                promedio: 2,
+                curso: "Android"}   
+                          );
+        console.log(estudiantes);
+
