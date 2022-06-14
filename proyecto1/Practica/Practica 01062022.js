@@ -211,3 +211,44 @@ por el momento, debemos buscar el carácter “@” en cada elemento y agregar
 aquellos que lo tengan al array de correos admitidos. En caso de no encontrar el
 carácter, se deberá agregar al array de correos descartados.*/
 
+/*crear un objeto perro*/
+
+let perro = {
+    nombre: 'Firulais',
+    edad: 2,
+    raza: 'Labrador',
+    color: 'Cafe',
+    ladrar: function(){
+        
+       return'Guau guau';
+    }
+  }
+
+  console.log(perro.ladrar());
+  
+  /* crear array de objet perros*/
+
+  let perros = [
+    {
+      nombre: 'Robertototo',
+      edad: 2,
+      raza: 'Labrador',
+      color: 'Cafe',
+      
+    },    { nombre: 'Firulais',
+      edad: 2,  
+      raza: 'Labrador', 
+      color: 'Cafe',  
+     
+        },
+        ladrar: function(){
+                                  
+          return'Guau guau';
+       }     
+
+    }
+  ] 
+
+  array.forEach(element => {
+    
+  });

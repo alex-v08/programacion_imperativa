@@ -110,7 +110,7 @@ todos los métodos y propiedades que puedan hacer falta para que el programa fun
 //   let banco = {
 //     clientes: arrayCuentas,
 //     consultarCliente: function(nombre) {
-//         let clienteEncontrado = this.clientes.find(cliente => cliente.titularCuenta === nombre);
+//         let BuscarNombre = this.perro.find(perros => perros.nombre=== nombre);
 //         return clienteEncontrado;
         
 //         },
